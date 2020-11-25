@@ -13,4 +13,9 @@ eclipse-2020-09
 - CHECKSUM을 구하고 해당 Verification을 검사
 <hr />
 
-[소스코드]()    
+#### 프로젝트
+[소스코드](https://github.com/DongGeon0908/CheckSum/blob/master/src/CHECKSUM5.java)
+<hr />
+
+#### 프로젝트 실행화면
+![picture]()
