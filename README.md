@@ -18,7 +18,7 @@ Version 1.3
 [소스코드](https://github.com/DongGeon0908/CheckSum/blob/master/src/CHECKSUM5.java)
 
 - 주요코드에 대한 설명
-
+<br>
 - 입력 : 영문 이름과 주소(예 : HONG KILDONG/YONGIN)
 ```
 public static void input() {
