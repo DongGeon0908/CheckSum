@@ -1,27 +1,39 @@
-### CHECKSUM
-<hr />
+# CheckSum
 
-#### 개발환경
-```
+개발언어: JAVA
+관리자: Benjamin Kim
+상태: 시작 전
+우선순위: 우선수위1 🔥
+유형: 작업 🔨
+작성일시: 2020년 12월 22일 오후 4:34
+타임라인: 2020년 12월 28일
+
+# CHECKSUM
+
+## 개발 화경
+
 jdk-14.0.2
+
 eclipse-2020-09
-Version 1.3
-```
-<hr />
 
-#### 프로젝트 소개
-- 사용자가 입력한 데이터에 대한 CHECKSUM 구하기 프로젝트
-- CHECKSUM을 구하고 해당 Verification을 검사
-<hr />
+Version 1.3
 
-#### 주요코드에 대한 설명
+## 프로젝트 소개
+
+문제에 대한 해결책과 그 이유에 대한 전체적인 개요를 입력하세요.
+
+- 사용자가 입력한 데이터에 대한 CHECKSUM 구하기 프로젝트
+- CHECKSUM을 구하고 해당 Verification을 검사
+
+# 주요코드
+
 [소스코드](https://github.com/DongGeon0908/CheckSum/blob/master/src/CHECKSUM5.java)
 
-- 주요코드에 대한 설명
-<br>
+# 주요코드에 대한 설명
 
-- 입력 : 영문 이름과 주소(예 : HONG KILDONG/YONGIN)
-```
+입력 : 영문 이름과 주소(예 : HONG KILDONG/YONGIN)
+
+```java
 public static void input() {
 		Scanner Scan = new Scanner(System.in); // 값을 입력받는 함수
 		System.out.println("######  1. 입력 ######");
@@ -32,36 +44,24 @@ public static void input() {
 		System.out.println(NameAndAddress);
 	}
 ```
-<br>
 
-- 4 바이트로 Parsing( 0 : Padding)
-```
-public static void Padding() {
-		System.out.println("######  2. 4 바이트로  Parsing( 0 : Padding)  ######");
-		// 빈 공간을 0으로 채움
-		for (int i = 0; i < 20; i++) {
-			if (i < NameAndAddress.length()) { // 입력 받은 값의 길이
-				Check[i] = Character.toString(NameAndAddress.charAt(i)); // 입력받은 값을 char형으로 CHECK 문자형 배열에 쪼개어 삽입한다.
-																			// charAT : i번째 값을 읽는다. toString : 값들을 반환받음
-			} else {
-				Check[i] = "0"; // 입력 받은 문자열을 전부 CHECK[i]에 입력하고 나면 나머지 공백은 0을 입력받는다.
-			}
-		}
-		// 칸띄우기 & 문자열 붙여서 출력하기
-		for (int i = 0; i < 20; i++) { // i의 크기를 20으로 정의한 이유 => 문제상의 4*5 행렬구조를 만들기 위해서
-			System.out.printf((new StringBuilder(String.valueOf(Check[i]))).append(" | ").toString(), new Object[0]);
-			// StringBuilder : 문자를 합친다. Check[i]의 값을 붙인다. 그리고 append로 공백과 |을 삽입한다.
-			if (i % 4 == 3) { // 한줄에 4개 이상이 될 경우 다음줄로 넘긴다.
-				System.out.println();
-			}
-		}
+4 바이트로 Parsing( 0 : Padding)
+
+```java
+public static void input() {
+		Scanner Scan = new Scanner(System.in); // 값을 입력받는 함수
+		System.out.println("######  1. 입력 ######");
+		NameAndAddress = Scan.nextLine(); // string으로 영문 이름과 주소 입력 받기
 		System.out.println("************************************************************");
-	} // CHECK에는 입력받은 문자들이 저장된다.
-```
-<br>
 
-- 16진수 변환과 변환된 값의 각자리의 합을 더하기 
+		NameAndAddress = NameAndAddress.replace(" ", "");
+		System.out.println(NameAndAddress);
+	}
 ```
+
+16진수 변환과 변환된 값의 각자리의 합을 더하기
+
+```java
 private static void Exchange_16() {
 		String Num_S[] = new String[8]; // 변환된 EXCHANGE 값을 받음
 		int Exchange[] = new int[8];
@@ -160,10 +160,10 @@ private static void Exchange_16() {
 		System.out.println("\n************************************************************");
 	}
 ```
-<br>
 
-- CHECKSUM 값을 구하고 + 1
-```
+CHECKSUM 값을 구하고 + 1
+
+```java
 private static void Sum() { // --> 위에서 구한 값에서 1을 더 추가
 		String NUM_S[] = new String[8];
 		String Carry_1[] = new String[8];
@@ -238,10 +238,10 @@ private static void Sum() { // --> 위에서 구한 값에서 1을 더 추가
 		System.out.println("\n************************************************************");
 	}
 ```
-<br>
 
-- CHECKSUM(1's Complement -> carry 떄문에) // 위에서 구한 CHECKSUM 값을 변환시킴
-```
+CHECKSUM(1's Complement -> carry 떄문에) // 위에서 구한 CHECKSUM 값을 변환시킴
+
+```java
 private static void Complement() { // 보수 15- 각 열의 값
 		String Com[] = new String[8];
 
@@ -288,10 +288,10 @@ private static void Complement() { // 보수 15- 각 열의 값
 		System.out.println("\n************************************************************");
 	}
 ```
-<br>
 
-- CHECKSUM 검사 F(최대값) = 보수 + 각 열의값
-```
+CHECKSUM 검사 F(최대값) = 보수 + 각 열의값
+
+```java
 private static void Vertification() { //
 		String Com[] = new String[8];
 
@@ -356,10 +356,9 @@ private static void Vertification() { //
 		System.out.printf("\n************************************************************", new Object[0]);
 	}
 ```
-<br>
-<hr />
 
-#### 프로젝트 실행화면
+# 프로젝트 실행화면
+
 ![picture](https://github.com/DongGeon0908/CheckSum/blob/master/pic.png)
-<hr />
+
 
