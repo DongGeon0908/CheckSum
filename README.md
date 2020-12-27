@@ -8,19 +8,13 @@
 작성일시: 2020년 12월 22일 오후 4:34
 타임라인: 2020년 12월 28일
 
-# CHECKSUM
-
 ## 개발 화경
 
-jdk-14.0.2
-
-eclipse-2020-09
-
-Version 1.3
+- jdk-14.0.2
+- eclipse-2020-09
+- Version 1.3
 
 ## 프로젝트 소개
-
-문제에 대한 해결책과 그 이유에 대한 전체적인 개요를 입력하세요.
 
 - 사용자가 입력한 데이터에 대한 CHECKSUM 구하기 프로젝트
 - CHECKSUM을 구하고 해당 Verification을 검사
@@ -31,7 +25,7 @@ Version 1.3
 
 # 주요코드에 대한 설명
 
-입력 : 영문 이름과 주소(예 : HONG KILDONG/YONGIN)
+- 입력 : 영문 이름과 주소(예 : HONG KILDONG/YONGIN)
 
 ```java
 public static void input() {
@@ -45,7 +39,7 @@ public static void input() {
 	}
 ```
 
-4 바이트로 Parsing( 0 : Padding)
+- 4 바이트로 Parsing( 0 : Padding)
 
 ```java
 public static void input() {
@@ -59,7 +53,7 @@ public static void input() {
 	}
 ```
 
-16진수 변환과 변환된 값의 각자리의 합을 더하기
+- 16진수 변환과 변환된 값의 각자리의 합을 더하기
 
 ```java
 private static void Exchange_16() {
@@ -161,7 +155,7 @@ private static void Exchange_16() {
 	}
 ```
 
-CHECKSUM 값을 구하고 + 1
+- CHECKSUM 값을 구하고 + 1
 
 ```java
 private static void Sum() { // --> 위에서 구한 값에서 1을 더 추가
@@ -239,7 +233,7 @@ private static void Sum() { // --> 위에서 구한 값에서 1을 더 추가
 	}
 ```
 
-CHECKSUM(1's Complement -> carry 떄문에) // 위에서 구한 CHECKSUM 값을 변환시킴
+- CHECKSUM(1's Complement -> carry 떄문에) // 위에서 구한 CHECKSUM 값을 변환시킴
 
 ```java
 private static void Complement() { // 보수 15- 각 열의 값
@@ -289,7 +283,7 @@ private static void Complement() { // 보수 15- 각 열의 값
 	}
 ```
 
-CHECKSUM 검사 F(최대값) = 보수 + 각 열의값
+- CHECKSUM 검사 F(최대값) = 보수 + 각 열의값
 
 ```java
 private static void Vertification() { //
