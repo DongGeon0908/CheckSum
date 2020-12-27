@@ -14,11 +14,12 @@ Version 1.3
 - CHECKSUM을 구하고 해당 Verification을 검사
 <hr />
 
-#### 프로젝트
+#### 주요코드에 대한 설명
 [소스코드](https://github.com/DongGeon0908/CheckSum/blob/master/src/CHECKSUM5.java)
 
 - 주요코드에 대한 설명
 <br>
+
 - 입력 : 영문 이름과 주소(예 : HONG KILDONG/YONGIN)
 ```
 public static void input() {
@@ -31,6 +32,7 @@ public static void input() {
 		System.out.println(NameAndAddress);
 	}
 ```
+<br>
 
 - 4 바이트로 Parsing( 0 : Padding)
 ```
@@ -56,6 +58,7 @@ public static void Padding() {
 		System.out.println("************************************************************");
 	} // CHECK에는 입력받은 문자들이 저장된다.
 ```
+<br>
 
 - 16진수 변환과 변환된 값의 각자리의 합을 더하기 
 ```
@@ -157,6 +160,7 @@ private static void Exchange_16() {
 		System.out.println("\n************************************************************");
 	}
 ```
+<br>
 
 - CHECKSUM 값을 구하고 + 1
 ```
@@ -234,6 +238,7 @@ private static void Sum() { // --> 위에서 구한 값에서 1을 더 추가
 		System.out.println("\n************************************************************");
 	}
 ```
+<br>
 
 - CHECKSUM(1's Complement -> carry 떄문에) // 위에서 구한 CHECKSUM 값을 변환시킴
 ```
@@ -283,6 +288,7 @@ private static void Complement() { // 보수 15- 각 열의 값
 		System.out.println("\n************************************************************");
 	}
 ```
+<br>
 
 - CHECKSUM 검사 F(최대값) = 보수 + 각 열의값
 ```
@@ -350,6 +356,7 @@ private static void Vertification() { //
 		System.out.printf("\n************************************************************", new Object[0]);
 	}
 ```
+<br>
 <hr />
 
 #### 프로젝트 실행화면
